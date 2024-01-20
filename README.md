@@ -1,0 +1,2 @@
+This is  a project that i worked on that utilises an online real estate database of houses based in the  united states of america in order to create a linear regression model that can be used to predict the price of any house in the united states of america given the required parameters.
+The project is web based and is written in python and uses the flask platform in order to create a web based user interface
