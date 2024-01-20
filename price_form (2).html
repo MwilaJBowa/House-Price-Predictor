@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Price</title>
+    <style>
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type=number], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      </style>
+</head>
+<body>
+  <h1>House Price Predictor</h1>
+  <h3>Please Fill In The Form Below</h3>
+  <div>
+    <form action="/calculated_price" method="POST">
+      <label for="bed">Bed:</label>
+    <input type="number" id="bed" name="bed" min="1" max="100"><br>
+    <label for="bath">Bath:</label>
+    <input type="number" id="bath" name="bath" min="1" max="100"><br>
+    <label for="acre_lot">Acre Lot:</label>
+      <input type="text" id="acre_lot" name="acre_lot" ><br>
+      <label for="house_size">House Size:</label>
+      <input type="text" id="house_size" name="house_size" ><br>
+      <label for="status">Status:</label>
+      <select id="status" name="status">
+        <option value="status_for_sale">For Sale</option>
+        <option value="status_ready_to_build">Ready To Build</option>
+      </select><br>
+      <label for="state">State:</label>
+      <select id="state" name="state">
+        <option value="state_Maine">Maine</option>
+        <option value="state_Massachusetts">Massachusetts</option>
+        <option value="state_New Hampshire">New Hampshire</option>
+        <option value="state_New Jersey">New Jersey</option>
+        <option value="state_New York">New York</option>
+        <option value="state_Pennsylvania">Pennsylvania</option>
+        <option value="state_Puerto Rico">Puerto Rico</option>
+        <option value="state_Rhode Island">Rhode Island</option>
+        <option value="state_South Carolina">South Carolina</option>
+        <option value="state_Vermont">Vermont</option>
+        <option value="state_Virgin Islands">Virgin Islands</option>
+        <option value="state_Virginia">Virginia</option>
+        <option value="state_West Virginia">West Virginia</option>
+        <option value="state_Wyoming">state_Wyoming</option>
+        <option value="state_Connecticut">Connecticut</option>
+        <option value="state_Delaware">Delaware</option>
+        <option value="state_Georgia">Georgia</option>
+        <option value="state_Maine">Maine</option>
+      </select><br>
+      <label for="zip_code">Zip Code:</label>
+      <select id="zip_code" name="zip_code">
+        <option value="zip_code_cat_8226.0">8226</option>
+        <option value="zip_code_cat_8401.0'">8401</option>
+        <option value="zip_code_cat_8527.0">8527</option>
+        <option value="zip_code_cat_8831.0">8831</option>
+        <option value="zip_code_cat_10003.0">10003</option>
+        <option value="zip_code_cat_10011.0">10011</option>
+        <option value="zip_code_cat_10013.0">10013</option>
+        <option value="zip_code_cat_10021.0">10021</option>
+        <option value="zip_code_cat_10022.0">10022</option>
+        <option value="zip_code_cat_10003.0">10003</option>
+        <option value="zip_code_cat_10011.0">10011</option>
+        <option value="zip_code_cat_10013.0">10013</option>
+        <option value="zip_code_cat_10016.0">10016</option>
+        <option value="zip_code_cat_10019.0">10019</option>
+        <option value="zip_code_cat_10021.0">10021</option>
+        <option value="zip_code_cat_10022.0">10022</option>
+        <option value="zip_code_cat_10023.0">10023</option>
+        <option value="zip_code_cat_10024.0">10024</option>
+        <option value="zip_code_cat_10025.0">10025</option>
+        <option value="zip_code_cat_10028.0">10028</option>
+        <option value="zip_code_cat_10065.0">10065</option>
+        <option value="zip_code_cat_10075.0">10075</option>
+        <option value="zip_code_cat_10128.0">10128</option>
+        <option value="zip_code_cat_11201.0">11201</option>
+        <option value="zip_code_cat_11235.0">11235</option>
+        <option value="zip_code_cat_other_code">Other Code</option>
+        </select><br>
+        <label for="City">City:</label>
+        <select id="city" name="city">
+          <option value="city_cat_Boston">Boston</option>
+          <option value="city_cat_Bridgeport">Bridge Port</option>
+          <option value="city_cat_Bronx">Bronx</option>
+          <option value="city_cat_Brooklyn">Brooklyn</option>
+          <option value="city_cat_Jersey City">Jersey City</option>
+          <option value="city_cat_Manchester">Manchester</option>
+          <option value="city_cat_Manhattan">Manhattan</option>
+          <option value="city_cat_Middletown">Middletown</option>
+          <option value="city_cat_New York">New York</option>
+          <option value="city_cat_New York City">New York City</option>
+          <option value="city_cat_Newark">Newark</option>
+          <option value="city_cat_Philadelphia">Philadelphia</option>
+          <option value="city_cat_Providence">Providence</option>
+          <option value="city_cat_San Juan">San Juan</option>
+          <option value="city_cat_Stamford">Stamford</option>
+          <option value="city_cat_Staten Island">Staten Island</option>
+          <option value="city_cat_Toms River">Toms River</option>
+          <option value="city_cat_Trenton">Trenton</option>
+          <option value="city_cat_Waterbury">Waterbury</option>
+          <option value="city_cat_Wilmington">Wilmington</option>
+          <option value="city_cat_other_city">Other City</option>
+        </select><br> 
+      <input type="submit" value="Submit">
+     </form> 
+  </div>
+   
+</body>
+</html>
